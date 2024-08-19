@@ -1,6 +1,7 @@
 #!/bin/sh
 
-contest_name="test"
+contest_name="typical90"
+# contest_name="abc368"
 filename=$1
 output_file_name="./"$contest_name"/exefile"
 input_file_name="./"$contest_name"/"$filename".cpp"
@@ -19,3 +20,7 @@ echo "エラー出力"
 echo "---"
 cat "./"$contest_name"/error.txt"
 echo "---"
+
+rm "./"$contest_name"/output.txt"
+rm "./"$contest_name"/error.txt"
+rm $output_file_name
