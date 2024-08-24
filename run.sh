@@ -1,7 +1,8 @@
 #!/bin/sh
 
-contest_name="typical90"
-# contest_name="abc368"
+# contest_name="practice/20240820"
+# contest_name="typical90"
+contest_name="abc368"
 filename=$1
 output_file_name="./"$contest_name"/exefile"
 input_file_name="./"$contest_name"/"$filename".cpp"
