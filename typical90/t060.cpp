@@ -30,46 +30,44 @@ int INF = 1001001001;
 ll LINF = 1001001001001001001;
 using mytpl = tuple<ll,int,int>;
 
-int op(int a, int b){return max(a,b);}
-int e(){return 0;}
-
 int main(){
     int n;
     cin >> n;
     vi a(n);
     rep(i,n) cin >> a[i];
+    vi up(n), down(n);
 
-    // int op(int a, int b){return max(a,b);}
-    // int e(){return 0;}
-    segtree<int, op, e> upseg(n);
-    segtree<int, op, e> downseg(n);
-
-    vi updp(n+1, 0);
-    vi downdp(n+1, 0);
-
+    set<int> up_s;
     rep(i,n){
-        upseg.set(a[i]-1, upseg.prod(0, a[i]-1) + 1);
-        updp[i] = upseg.all_prod();
-        downseg.set(a[n-i-1]-1, downseg.prod(0, a[i]-1) + 1);
-        downdp[i] = downseg.all_prod();
+        auto it = up_s.lower_bound(a[i]);
+        if(it == up_s.end()){
+            up_s.insert(a[i]);
+        }else{
+            up_s.erase(it);
+            up_s.insert(a[i]);
+        }
+        up[i] = (int)up_s.size();
+    }
+
+    set<int> down_s;
+    rrep(i,n){
+        auto it = down_s.lower_bound(a[i]);
+        if(it == down_s.end()){
+            down_s.insert(a[i]);
+        }else{
+            down_s.erase(it);
+            down_s.insert(a[i]);
+        }
+        down[i] = (int)down_s.size();
     }
 
     int ans = 0;
-    rep (i,n){
-        ans = max(ans, updp[i] + downdp[n-i-1] - 1);
-        // cerr << i << " " << n-i-1 << endl;
+    rep(i,n){
+        ans = max(ans, up[i] + down[i] - 1);
     }
+
     cout << ans << endl;
 
-    // rep(i,n){
-    //     cerr << updp[i] << " ";
-    // }
-    // cerr << endl;
-    // rep(i,n){
-    //     cerr << downdp[i] << " ";
-    // }
-    // cerr << endl;
-    return 0;
 
 
 }
