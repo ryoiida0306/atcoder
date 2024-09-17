@@ -9,6 +9,11 @@
         "xhash": "cpp",
         "xstring": "cpp",
         "numeric": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "xutility": "cpp",
+        "algorithm": "cpp",
+        "random": "cpp"
     }
 }
