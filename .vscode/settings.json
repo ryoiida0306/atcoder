@@ -16,5 +16,6 @@
         "algorithm": "cpp",
         "random": "cpp",
         "queue": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "F:/work/atcoder/ac-library/test/benchmark"
 }

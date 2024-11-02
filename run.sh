@@ -2,7 +2,7 @@
 
 # contest_name="practice/20240820"
 # contest_name="typical90"
-contest_name="abc377"
+contest_name="abc378"
 # contest_name="ahc036"
 ahc="False"
 filename=$1
