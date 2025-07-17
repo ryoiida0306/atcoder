@@ -1,4 +1,7 @@
-contest_name=$1
+#!/bin/sh
+
+. ./config.sh
+
 mkdir $contest_name
 touch $contest_name/a.cpp
 touch $contest_name/b.cpp
